@@ -33,7 +33,7 @@
 
 ## Pasos
 
-<img src="ImgTutorialWooCommerce/tuto-1.jpg" width="400px"/>
+<img src="https://github.com/pruebasepayco/epayco-dokan/blob/main/ImgTutorialWooCommerce/tuto-1.png" width="400px"/>
 <img src="ImgTutorialWooCommerce/tuto-2.jpg" width="400px"/>
 <img src="ImgTutorialWooCommerce/tuto-3.jpg" width="400px"/>
 <img src="ImgTutorialWooCommerce/tuto-4.jpg" width="400px"/>
