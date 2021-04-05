@@ -31,16 +31,7 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
             global $submenu;
             $slug = 'payco';
             $capability    = 'manage_woocommerce';
-            // add_menu_page(
-            //     'ePayco',
-            //     'ePayco',
-            //     'manage_options',
-            //     'payco',
-            //     'Payco' ,
-            //     plugin_dir_url(__FILE__) . 'images/payco.png',
-            //     4
-            // );
-            add_menu_page( __( 'ePayco', 'epayco' ), __( 'ePayco', 'epayco' ), $capability, $slug,  'Payco' , 'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><g fill="#9EA3A8" fill-rule="nonzero"><path d="M2.565 1.909s10.352-.665 10.352 7.231-2.735 9.481-5.134 9.994c0 0 9.974 2.125 9.974-8.995S5.035.624 2.565 1.91z"/><path d="M10.982 15.353s-.999 3.07-4.018 3.461c-3.02.39-3.582-1.062-5.688-.962 0 0-.171-1.441 1.529-1.644 1.7-.202 4.885.193 7.004-.991 0 0 1.253-.582 1.499-.862l-.326.998z"/><path d="M2.407 2.465V15.74a3.29 3.29 0 01.32-.056 18.803 18.803 0 011.794-.083c.624 0 1.306-.022 1.987-.078v-4.465c0-1.485-.107-3.001 0-4.484.116-.895.782-1.66 1.73-1.988.759-.25 1.602-.2 2.316.135-3.414-2.24-7.25-2.284-8.147-2.255z"/></g></svg>' ), 55.4 );
+            add_menu_page( __( 'ePayco', 'epayco' ), __( 'ePayco', 'epayco' ), $capability, $slug,  'Payco' , 'data:image/svg+xml;base64,' . base64_encode( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"></svg>' ), 55.4 );
             // if ( current_user_can( $capability ) ) {
             //     $submenu[ $slug ][] = [ __( 'Dashboard', 'epayco' ), $capability, 'admin.php?page=' . $slug . '#/' ];
             //     $submenu[ $slug ][] = [ __( 'Withdraw', 'depayco' ), $capability, 'admin.php?page=' . $slug . '#/withdraw?status=pending' ];
@@ -165,8 +156,8 @@ $tabs = array(
                 }else{
                      $this->epayco_reduce_stock_pending = "yes";
                 }
-                $this->epayco_type_checkout=$this->get_option('epayco_type_checkout');
-                $this->p_split_primary_receiver_fee=$this->get_option('p_split_primary_receiver_fee');
+                // $this->epayco_type_checkout=$this->get_option('epayco_type_checkout');
+                // $this->p_split_primary_receiver_fee=$this->get_option('p_split_primary_receiver_fee');
                 
                 $this->epayco_endorder_state=$this->get_option('epayco_endorder_state');
                 $this->epayco_url_response=$this->get_option('epayco_url_response');
@@ -409,21 +400,7 @@ $tabs = array(
                         'description' => __('Habilite para realizar pruebas', 'epayco_woocommerce'),
                         'default' => 'no',
                     ),
-                    'epayco_type_checkout' => array(
-                        'title' => __('Tipo de Split', 'epayco_woocommerce'),
-                        'type' => 'select',
-                        'css' =>'line-height: inherit',
-                        'label' => __('Seleccione un tipo de Split:', 'epayco_woocommerce'),
-                        'description' => __('Tipo de Split Fijo o Porcentaje', 'epayco_woocommerce'),
-                        'options' => array('false'=>"Fijo","true"=>"Porcentaje"),
-                    ),
-                    'p_split_primary_receiver_fee' => array(
-                        'title' => __('<span class="epayco-required">p_split_primary_receiver_fee</span>', 'epayco_woocommerce'),
-                        'type' => 'text',
-                        'description' => __('Comisión del recibidor primario.', 'epayco_woocommerce'),
-                        'default' => '',
-                        'placeholder' => ''
-                    ),
+                  
                     'epayco_endorder_state' => array(
                         'title' => __('Estado Final del Pedido', 'epayco_woocommerce'),
                         'type' => 'select',
@@ -547,8 +524,8 @@ $tabs = array(
                 $currency = strtolower(get_woocommerce_currency());
                 $testMode = $this->epayco_testmode == "yes" ? "true" : "false";
                 $basedCountry = WC()->countries->get_base_country();
-                $p_split_type=$this->epayco_type_checkout;
-                $external=$this->epayco_type_checkout;
+                // $p_split_type=$this->epayco_type_checkout;
+                // $external=$this->epayco_type_checkout;
                 $redirect_url =get_site_url() . "/";
                 $confirm_url=get_site_url() . "/";
                 $redirect_url = add_query_arg( 'wc-api', get_class( $this ), $redirect_url );
