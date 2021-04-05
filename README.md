@@ -45,5 +45,5 @@
 
 
 ## Versiones
-* [ePayco plugin WooCommerce v5.x.x](https://github.com/epayco/Plugin_ePayco_WooCommerce/releases/tag/3.5.3).
+* [ePayco plugin WooCommerce-Dokan v5.x.x](https://github.com/pruebasepayco/epayco-dokan/releases/tag/v5.x).
 
